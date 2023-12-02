@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* font-family: "Times New Roman", Times, serif; */
+  line-height: 1.5;
+  font-weight: 400;
+}
+* {
+  font-family: "Open Sans", sans-serif;
+}
+body {
+  background-color: #f7f8f9;
+}
+
+header {
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(36, 123, 211);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  /* padding: 20px 7%; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 65px;
+  z-index: 1000;
+}
+
+header .logo {
+  font-weight: bolder;
+  font-size: 25px;
+  color: #fff;
+}
+
+header .navbar ul {
+  list-style: none;
+}
+
+header .navbar ul li {
+  position: relative;
+  float: left;
+}
+
+header .navbar ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  padding: 20px;
+  color: #fff;
+  display: block;
+  transition: 0.5s ease;
+}
+
+header .navbar ul li a:hover {
+  background-color: rgb(38, 115, 192);
+  color: #ffff;
+  height: 66px;
+  border-radius: 2px;
+  transition: 0.5s ease;
+}
+
+header .navbar ul li ul {
+  position: absolute;
+  left: 0;
+  width: 180px;
+
+  background-color: #036;
+  display: none;
+}
+
+header .navbar ul li ul li {
+  width: 100%;
+  left: 0;
+  border-top: 1px solid rgba(255, 18, 18, 0.1);
+}
+
+header .navbar ul li ul li ul {
+  left: 180px;
+  top: 0;
+}
+
+header .navbar ul li:focus-within > ul,
+header .navbar ul li:hover > ul {
+  display: initial;
+}
+
+#menu-bar {
+  display: none;
+  left: -50%;
+  transition: 0.8s ease;
+}
+header label {
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  display: none;
+}
+
+.sub-header {
+  visibility: visible;
+}
+
+@media screen and (max-width: 991px) {
+  header {
+    /* padding: 20px; */
+  }
+
+  header label {
+    display: initial;
+  }
+
+  header .navbar ul {
+    margin-top: -3px;
+    height: 1000vh;
+  }
+
+  header .navbar {
+    height: auto;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgb(47, 47, 47);
+    background-color: 1px solid rgba(0, 0, 0, 0.1);
+    display: none;
+    position: absolute;
+    z-index: 999;
+  }
+
+  header .navbar ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  header .navbar ul li ul {
+    position: relative;
+    width: 100%;
+  }
+
+  header .navbar ul li ul li {
+    background-color: rgb(47, 47, 47);
+    text-align: center;
+  }
+
+  header .navbar ul li ul li ul {
+    width: 100%;
+    left: 0;
+  }
+
+  #menu-bar:checked ~ .navbar {
+    display: initial;
+    right: 50%;
+    top: 11.5%;
+    transition: 0.8s ease;
+  }
+
+  .sub-header {
+    visibility: hidden;
+  }
+}
+
+#app {
+  height: 100%;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
